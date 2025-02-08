@@ -1,0 +1,58 @@
+Parallel Text Processing
+
+Introduction
+This project aims to process large text documents by splitting them into chunksand handling them in parallel.
+The goal is to leverage parallel processing to speed up tasks such as word counting, vowel counting.
+Threads will process sections of the document independently, and the results will be merged into a final output.
+
+
+Objective
+The main objective of this project is to process large text documents more efficiently by dividing the work among multiple threads.
+This approach reduces the time required to perform operations like word counting or searching within large documents.
+
+
+Scope
+This documentation covers the following key aspects:
+
+Splitting the text into manageable chunks to process in parallel.
+Parallel processing of document sections for faster computation.
+Combining results from different threads into a final output.
+Scalability and handling larger files as the project evolves.
+
+The Chosen text document gets read and stored in a String and split by word count over the number of chunks.
+
+Each chunk is processed by a different thread acting independently.
+
+The results are then all combined from each thread and displayed as the final result.
+
+
+System Architecture
+The system will consist of the following components:
+
+Text Chunking: Split a large text document into smaller chunks that can be processed independently.
+Thread Pool: A pool of worker threads that process each chunk of text in parallel.
+Task Execution: Each thread will perform a specified task, such as counting words,
+detecting word frequency, or performing some other text analysis.
+Result Merging: After each thread completes its task, the results are merged into a final output.
+
+
+Components:
+Document Splitter: This component takes a large document and splits it into chunks of a defined size.
+Thread Pool: This component initializes and manages multiple threads. Each thread will process one chunk of the document.
+Task Handler: The specific task that each thread performs (e.g., word counting, vowel counting).
+Result Merger: This component combines the results from each thread into a final result.
+
+
+Key Features
+
+Parallel Processing: Splitting the document into chunks and processing them in parallel allows for faster execution, especially on large documents.
+Scalability: The number of threads can be adjusted depending on the number the user deems necessary to process the document based on its size.
+Efficiency: Independent processing of chunks leads to efficient resource utilization, reducing the processing time significantly.
+
+
+Testing
+The system should be thoroughly tested with various document sizes and tasks. Key test cases include:
+
+Small documents (to test the basic functionality).
+Large documents (to test performance and parallel processing).
+Different text analysis tasks (e.g., word counting, vowel counting, etc.).
